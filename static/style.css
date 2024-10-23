@@ -1,0 +1,259 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e9e9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #a80f0f;
+    margin-bottom: 20px;
+    margin-top: -50px;
+}
+
+/* Contenedor principal que aloja los formularios */
+.container {
+    display: flex;
+    justify-content: space-between; /* Mantiene los formularios a los lados */
+    gap: 40px; /* Espacio entre los formularios */
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Formulario de datos */
+.form-container, .seminario-container {
+    flex: 1; /* Ambos formularios ocupan el mismo espacio */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* Estilos para la sección de seminarios */
+.seminario-container label {
+    font-weight: normal;
+}
+
+/* Contenedor del botón de envío */
+.submit-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: -50px; /* Mueve el botón fuera del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #9c0000;
+}
+
+/* Responsive Design - Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Los formularios se colocan uno debajo del otro */
+    }
+
+    .submit-container {
+        position: static;
+        transform: none;
+    }
+}
+
+/* Estilos para la tabla del listado de inscritos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #383636; /* Color del encabezado */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1; /* Color para filas alternas */
+}
+
+/* Efecto hover en las filas de la tabla */
+tr:hover td {
+    background-color: #e0e0e0; /* Color al pasar el cursor */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Mantiene a la izquierda */
+    width: 100%;
+     /* Espacio debajo del botón */
+}
+
+/* Estilo para el botón en registro.html (centrar) */
+.center-button {
+    display: flex; /* Usa flexbox para alinear el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio debajo del botón */
+}
+/* Botón para añadir nuevo registro */
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-left: 0; 
+    cursor: pointer;
+    transition: background 0.3s;
+    
+}
+
+.add-button:hover {
+    background-color: #9c0000;
+}
+
+/* Responsive Design - Ajuste para pantallas más pequeñas */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+header {
+    width: 100%;
+    text-align: center; /* Centra horizontalmente el texto dentro del header */
+    padding: 20px 0; /* Espaciado vertical en el header */
+    background-color: #383636; /* Fondo del header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del header */
+    color: white; /* Color del texto en el header */
+    font-size: 24px; /* Tamaño de la fuente del header */
+}
+
+header h1 {
+    margin: 0; /* Elimina márgenes del h1 */
+}
+.info-box {
+    position: relative; /* O absolute, dependiendo de tus necesidades */
+    top: -150px; /* Ajusta este valor según necesites */
+    border: 1px solid #ccc; /* Color del borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: -80px auto;  /* Espacio debajo del cuadro */
+    background-color: white; /* Color de fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    width: 80%; /* Ancho del cuadro */
+    max-width: 600px; /* Ancho máximo */
+    text-align: left; /* Alinear el texto a la izquierda */
+    
+}
+
+.box {
+    background-color: #ffffff; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin: 20px auto; /* Márgenes superior e inferior, centrado horizontalmente */
+    width: 100%; /* Ancho del div (ajusta según sea necesario) */
+    max-width: 1000px; /* Ancho máximo del div */
+    min-height: auto; /* Altura mínima (ajusta según tu contenido) */
+    text-align: center; /* Centra el texto dentro del div */
+}
+
+
+/* Estilo para el botón de eliminar con clase personalizada */
+.btn-eliminar {
+    background-color: rgb(185, 30, 30); /* Color de fondo rojo */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background 0.3s; /* Transición suave */
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(2, 2, 2); /* Cambia a un rojo más oscuro al pasar el mouse */
+}
+
+.btn-editar {
+    background-color: rgb(3, 187, 194); /* Color de fondo rojo */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background 0.3s; /* Transición suave */
+    text-decoration: none; 
+}
+
+.btn-editar:hover {
+    background-color: rgb(2, 2, 2); /* Cambia a un rojo más oscuro al pasar el mouse */
+}

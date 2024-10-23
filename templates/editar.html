@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    <form action="{{ url_for('editar', id=producto.id) }}" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" value="{{ producto.cantidad }}" required>
+        <label for="precio">Precio:</label>
+        <input type="text" name="precio" value="{{ producto.precio }}" required>
+        <label for="fecha_vencimiento">Fecha de Vencimiento:</label>
+        <input type="date" name="fecha_vencimiento" value="{{ producto.fecha_vencimiento }}" required>
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" required>
+            <option value="Electrónica" {% if producto.categoria == 'Electrónica' %}selected{% endif %}>Electrónica</option>
+            <option value="Ropa" {% if producto.categoria == 'Ropa' %}selected{% endif %}>Ropa</option>
+            <option value="Alimentos" {% if producto.categoria == 'Alimentos' %}selected{% endif %}>Alimentos</option>
+            <option value="Hogar" {% if producto.categoria == 'Hogar' %}selected{% endif %}>Hogar</option>
+        </select>
+
+        <br>
+        <div class="button-container center-button">
+            <button type="submit">Actualizar Producto</button>
+        </div>
+
+    </form>
+</body>
+</html>

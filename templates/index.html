@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Gestión de Productos</title>
+</head>
+<body>
+    <div class="info-box">
+        <h2>SEGUNDO PARCIAL TEM-742</h2>
+        <p><b>Nombre: </b>Roly Rolando Maydana Acarapi</p>
+        <p><b>Carnet: </b>7022628 LP</p>
+    </div>
+    <div>
+    <h1><b>GESTION DE PRODUCTOS</b></h1>
+</div>
+    <div class="box">
+    <div class="button-container">
+        <a href="{{ url_for('nuevo') }}" class="add-button">Nuevo Producto</a>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha Vencimiento</th>
+            <th>Categoría</th>
+            <th colspan="2">ACCION</th>
+            
+        </tr>
+        {% for item in productos %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.precio }}</td>
+            <td>{{ item.fecha_vencimiento }}</td>
+            <td>{{ item.categoria }}</td>
+            <td><a href="{{ url_for('editar', id=item.id) }}" class="btn-editar">Editar</a></td>
+            <td>
+                <form action="{{ url_for('eliminar', id=item.id) }}" method="POST">
+                    <input type="submit" class="btn-eliminar" value="Eliminar">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+
+</html>
